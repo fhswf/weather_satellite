@@ -256,7 +256,7 @@ Wir erstellen mit nano die Skriptdatei **~/weather/predict/receive\_and\_process
 # $4 = TLE File
 # $5 = EPOC start time
 # $6 = Time to capture
-sudo timeout $6 rtl\_fm -f ${2}M -s 60k -g 45 -p 18 -F 9 -E deemp - | sox -t raw –r 60k -e s -b 16 -c 1 -V1 - $3.wav
+sudo timeout $6 rtl\_fm -f ${2}M -s 60k -g 45 -p 18 -F 9 -E deemp - | sox -t raw –r 60k -e s -b 16 -c 1 -V1 - $3.wav rate 11025
 PassStart=`expr $5 + 90`
 if [-e $3.wav]
   then
