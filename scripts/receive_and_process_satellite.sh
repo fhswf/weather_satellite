@@ -7,7 +7,7 @@
 # $5 = EPOC start time
 # $6 = Time to capture
 
-sudo timeout $6 rtl_fm -f ${2}M -s 48k -g 45 -p 16 -r 48 -E deemp -F 9 - | sox -t raw -r 48k -e s -b 16 -c 1 -V1 - $3.wav rate 11025
+sudo timeout $6 rtl_fm -f ${2}M -s 48k -g 45 -p 16 -r 48k -E deemp -F 9 - | sox -t raw -r 48k -e s -b 16 -c 1 -V1 - $3.wav rate 11025
 
 PassStart=`expr $5 + 90`
 
