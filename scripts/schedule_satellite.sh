@@ -17,8 +17,8 @@ var3=`echo $START_TIME | cut -d " " -f 2 | cut -d ":" -f 3`
 TIMER=`expr $var2 - $var1 + $var3`
 
 OUTDATE=`date --date="TZ=\"UTC\" $START_TIME" +%Y%m%d-%H%M%S`
-
-if [ $MAXELEV -gt 19 ]
+# aktivate satellite if it is min. 10 degr. above horizon
+if [ $MAXELEV -gt 9 ]
   then
     echo ${1//" "}${OUTDATE} $MAXELEV
 
